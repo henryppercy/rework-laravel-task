@@ -2,6 +2,7 @@
 
 use App\Models\Product;
 use App\Http\Controllers\ProductController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,12 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Get all products
-Route::get('/products', function () {
-    $products = Product::all();
+// // Get all products
+// Route::get('/products', function () {
+//     $categories = Category::all();
+//     $products = Product::all();
 
-    return view('products', ['products' => $products]);
-});
+//     return view('products', ['categories' => $categories, 'products' => $products]);
+// });
 
 Route::resource('products', ProductController::class);
 
