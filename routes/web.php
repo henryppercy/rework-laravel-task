@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Product;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Get all products
+Route::get('/products', function () {
+    $products = Product::all();
+
+    return view('products', ['products' => $products]);
 });
+
+Route::resource('products', ProductController::class);
+
+
