@@ -10,19 +10,19 @@
         <div class="w-full max-w-xs grid mb-10">
             <form action="/products" method="POST" class="mt-9 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 h-min">
                 @csrf
-                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Product name: </label>
+                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Product name:</label>
                 <input type="text" name="name" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 
-                <label for="price" for="name" class="block text-gray-700 text-sm font-bold mb-2">Price: </label>
+                <label for="price" for="name" class="block text-gray-700 text-sm font-bold mb-2">Price:</label>
                 <input type="number" name="price" step="0.01" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 
-                <label for="quantity" for="name" class="block text-gray-700 text-sm font-bold mb-2">Quantity: </label>
+                <label for="quantity" for="name" class="block text-gray-700 text-sm font-bold mb-2">Quantity:</label>
                 <input type="number" name="quantity" step="1" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 
-                <label for="description"  class="block text-gray-700 text-sm font-bold mb-2">Description: </label>
+                <label for="description"  class="block text-gray-700 text-sm font-bold mb-2">Description:</label>
                 <textarea name="description" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
 
-                <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Category: </label>
+                <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Category:</label>
                     @foreach ($categories as $category)
                     <div class="flex items-center mb-4">
                         <input name="category[]" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" value="{{ $category->id }}">
