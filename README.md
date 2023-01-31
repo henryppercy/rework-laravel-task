@@ -4,6 +4,9 @@
 
 A short exercise building a Laravel app which contains a Product and Category model with a many-to-many relationship. 
 
+<img src="./storage/images/rework-product-homepage.png" width="400">
+
+
 ## 1. Task Requirements: 
 
 * Product model and associated database table with:
@@ -45,3 +48,4 @@ If this was my main project, I would work on:
 * Making the frontend more responsive and accessible. 
 * Building enough routes for this to be a full CRUD application. 
 * Moving the project to PHP 8.2 and Laravel 9.
+
