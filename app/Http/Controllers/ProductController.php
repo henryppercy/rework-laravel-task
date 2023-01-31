@@ -15,7 +15,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::with('categories')->get();
+        // dd($products);
+        // return view('products', compact('products'));
+
+        // $products = Product::all();
         $categories = Category::all();
         return view('products', ['categories' => $categories ,'products' => $products]);
     }
@@ -38,8 +42,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        Product::create($data);
+        $categories = $request->input('category');;
+
+        $product = new Product;
+        $product->name = $request->input('name');
+        $product->price = $request->input('price');
+        $product->quantity = $request->input('quantity');
+        $product->description = $request->input('description');
+        $product->save();
+        $product->categories()->attach($categories);
+
         return redirect('/products');
     }
 
