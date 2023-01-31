@@ -19,19 +19,16 @@
                 <label for="quantity" for="name" class="block text-gray-700 text-sm font-bold mb-2">Quantity: </label>
                 <input type="number" name="quantity" step="1" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 
-                <label for="description" for="name" class="block text-gray-700 text-sm font-bold mb-2">Description: </label>
+                <label for="description"  class="block text-gray-700 text-sm font-bold mb-2">Description: </label>
                 <textarea name="description" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
 
-                <label for="description" for="category" class="block text-gray-700 text-sm font-bold mb-2">Category: </label>
-                {{-- <select multiple name="category" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> --}}
+                <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Category: </label>
                     @foreach ($categories as $category)
                     <div class="flex items-center mb-4">
-                        <input id="default-checkbox" type="checkbox" value={{ $category->category_id }} class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
-                        <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900">{{ $category->name }}</label>
+                        <input name="category[]" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" value="{{ $category->id }}">
+                        <label for="category" class="ml-2 text-sm font-medium text-gray-900">{{ $category->name }}</label>
                     </div>
-                        {{-- <option value={{ $category->id }}>{{ $category->name }}</option> --}}
                     @endforeach
-                {{-- </select> --}}
 
                 <button type="submit" class="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">Add product</button>
             </form>
@@ -43,7 +40,10 @@
                 <h2 class="mb-2 text-2xl font-bold tracking-tight text-white">{{ $product->name }}</h2>
                 <p class="text-xl font-bold text-white">£{{ $product->price }}</p>
                 <p class="font-normal text-gray-400">Quantity: {{ $product->quantity }}</p>
-                <p class="font-normal text-gray-400">{{ $product->description }}</p>    
+                <p class="font-normal text-gray-400">{{ $product->description }}</p>  
+                @foreach ($product->categories as $category)
+                    <li class="font-normal text-gray-400">{{ $category->name }}</li>
+                @endforeach  
             </div>    
             @endforeach
         </div>
