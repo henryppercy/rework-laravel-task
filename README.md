@@ -4,7 +4,7 @@
 
 A short exercise building a Laravel app which contains a Product and Category model with a many-to-many relationship. 
 
-<img src="./storage/images/rework-product-homepage.png" width="400">
+<img src="./storage/images/rework-product-homepage.png" width="700">
 
 
 ## 1. Task Requirements: 
