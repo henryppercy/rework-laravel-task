@@ -23,12 +23,12 @@
                 <textarea name="description" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
 
                 <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Category:</label>
-                    @foreach ($categories as $category)
-                    <div class="flex items-center mb-4">
-                        <input name="category[]" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" value="{{ $category->id }}">
-                        <label for="category" class="ml-2 text-sm font-medium text-gray-900">{{ $category->name }}</label>
-                    </div>
-                    @endforeach
+                @foreach ($categories as $category)
+                <div class="flex items-center mb-4">
+                    <input name="category[]" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" value="{{ $category->id }}">
+                    <label for="category" class="ml-2 text-sm font-medium text-gray-900">{{ $category->name }}</label>
+                </div>
+                @endforeach
 
                 <button type="submit" class="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">Add product</button>
             </form>
