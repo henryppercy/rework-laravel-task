@@ -12,4 +12,12 @@ class Category extends Model
     protected $fillable = ['name'];
 
     public $timestamps = false;
+
+    /**
+     * The categories that belong to the product.
+     */
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'category_product', 'category_id', 'product_id ');
+    }
 }
