@@ -16,10 +16,6 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::with('categories')->get();
-        // dd($products);
-        // return view('products', compact('products'));
-
-        // $products = Product::all();
         $categories = Category::all();
         return view('products', ['categories' => $categories ,'products' => $products]);
     }
