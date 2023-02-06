@@ -28,8 +28,8 @@ class ProductController extends Controller
     public function create()
     {
         // Show the form 
-    }
-
+    } 
+    
     /**
      * Store a newly created resource in storage.
      *
