@@ -36,19 +36,19 @@
         <div>
             <h1 class="text-white font-sans text-5xl font-medium p-6">Products</h1>
             <div class="flex flex-row flex-wrap">
-                @foreach ($products as $product)
-                    <div class="block max-w-sm p-6 border rounded-lg shadow hover:bg-gray-100 bg-gray-800 border-gray-700 hover:bg-gray-700 m-4">
-                        <h2 class="mb-2 text-2xl font-bold tracking-tight text-white">{{ $product->name }}</h2>
-                        <p class="text-xl font-bold text-white">£{{ $product->price }}</p>
-                        <p class="font-normal text-gray-400 italic">Quantity: {{ $product->quantity }}</p>
-                        <p class="font-normal text-white mt-4">{{ $product->description }}</p> 
-                        <div class="mt-3">
-                            @foreach ($product->categories as $category)
-                                <p class="font-normal text-gray-500 italic inline">{{ $category->name }}</p>
-                            @endforeach  
-                        </div>
-                    </div>    
-                @endforeach
+            @foreach ($products as $product)
+                <div class="block max-w-sm p-6 border rounded-lg shadow hover:bg-gray-100 bg-gray-800 border-gray-700 hover:bg-gray-700 m-4">
+                    <h2 class="mb-2 text-2xl font-bold tracking-tight text-white">{{ $product->name }}</h2>
+                    <p class="text-xl font-bold text-white">£{{ $product->price }}</p>
+                    <p class="font-normal text-gray-400 italic">Quantity: {{ $product->quantity }}</p>
+                    <p class="font-normal text-white mt-4">{{ $product->description }}</p> 
+                    <div class="mt-3">
+                        @foreach ($product->categories as $category)
+                            <p class="font-normal text-gray-500 italic inline">{{ $category->name }}</p>
+                        @endforeach  
+                    </div>
+                </div>    
+            @endforeach
             </div>
         </div>
     </body>
