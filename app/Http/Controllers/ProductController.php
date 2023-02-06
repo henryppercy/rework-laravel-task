@@ -59,7 +59,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        // Show an individual product
+        echo $product;
     }
 
     /**
@@ -93,8 +93,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $productDel = Product::find($product->id);
-        $productDel->delete();
+        $product->delete();
 
         return redirect('/products');
     }
