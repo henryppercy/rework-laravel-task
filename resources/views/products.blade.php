@@ -47,6 +47,10 @@
                             <p class="font-normal text-gray-500 italic inline">{{ $category->name }}</p>
                         @endforeach  
                     </div>
+                    {{ Form::open(array('url' => 'products/' . $product->id)) }}
+                        {{ Form::hidden('_method', 'DELETE') }}
+                        {{ Form::submit('Delete', array('class' => 'mt-5 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline')) }}
+                    {{ Form::close() }}
                 </div>    
             @endforeach
             </div>
