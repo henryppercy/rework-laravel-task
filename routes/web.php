@@ -16,12 +16,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// // Get all products
-// Route::get('/products', function () {
-//     $categories = Category::all();
-//     $products = Product::all();
-
-//     return view('products', ['categories' => $categories, 'products' => $products]);
-// });
-
 Route::resource('products', ProductController::class);
