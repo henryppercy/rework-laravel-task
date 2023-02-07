@@ -12,7 +12,7 @@
             <p class="text-xl font-bold text-white">£{{ $product->price }}</p>
             <p class="font-normal text-gray-400 italic">Quantity: {{ $product->quantity }}</p>
             <p class="font-normal text-white mt-4 mb-6">{{ $product->description }}</p>
-            <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{{ URL::to('products/') }}">Back</a>
+            <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{{ URL::to('products') }}">Back</a>
         </div>
     </body>
 </html>
