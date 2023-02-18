@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db:3306
--- Generation Time: Feb 06, 2023 at 08:57 PM
+-- Generation Time: Jan 31, 2023 at 11:47 AM
 -- Server version: 5.7.40
 -- PHP Version: 8.0.19
 
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categories` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+                              `id` bigint(20) UNSIGNED NOT NULL,
+                              `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -37,14 +37,39 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`) VALUES
-(1, 'Phone'),
-(2, 'Laptop'),
-(3, 'Earbuds'),
-(4, 'Google'),
-(5, 'Samsung'),
-(6, 'Apple');
+                                            (1, 'Phone'),
+                                            (2, 'Laptop'),
+                                            (3, 'Earbuds'),
+                                            (4, 'Google'),
+                                            (5, 'Samsung'),
+                                            (6, 'Apple');
 
 -- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+                            `id` bigint(20) UNSIGNED NOT NULL,
+                            `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                            `price` decimal(8,2) NOT NULL,
+                            `quantity` int(11) NOT NULL,
+                            `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `price`, `quantity`, `description`) VALUES
+                                                                              (1, 'AirPods', '179.00', 83, 'Personalised Spatial Audio with dynamic head tracking places sounds all around you to create a three-dimensional listening experience for music, TV shows, movies and more.'),
+                                                                              (2, 'iPhone 14', '799.00', 68, 'A15 Bionic, with a 5‑core GPU, powers all the latest features and makes graphically intense games and AR apps feel ultra fluid.'),
+                                                                              (3, 'Pixel 7', '599.99', 54, 'The fast and secure Pixel 7, with amazing battery life and advanced camera features.'),
+                                                                              (4, 'Galaxy Book2', '699.00', 120, 'Galaxy Book2 offers a wide 15-inch display with plenty of productivity-boosting space. Neatly framed in a sleek full aluminium body, it delivers style and durability.'),
+                                                                              (5, 'Chromebook', '299.00', 17, 'Chromebooks are designed to help you get things done quickly, securely and easily. Go from working hard to winding down with instant access to your files and favourite apps.'),
+                                                                              (6, 'Galaxy Z Fold4', '1649.99', 23, 'It\'s basically two phones in one. Slimmed down everywhere but the screen, minimised bezels and lightweight materials make Galaxy Z Fold4 even more pocket-friendly.'),
+(7, 'Galaxy Book2 Pro 360', '1549.00', 25, 'Galaxy Book2 Pro 360 is the device you’ve been waiting for. Thin and light, this 2-in-1 laptop works perfectly with S Pen and with the enhanced low latency, you can write and draw smoothly like you would with a real pen.');
 
 --
 -- Table structure for table `category_product`
@@ -77,31 +102,6 @@ INSERT INTO `category_product` (`category_id`, `product_id`) VALUES
 (5, 7);
 
 -- --------------------------------------------------------
-
---
--- Table structure for table `products`
---
-
-CREATE TABLE `products` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `price` decimal(8,2) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `name`, `price`, `quantity`, `description`) VALUES
-(1, 'AirPods', '179.00', 83, 'Personalised Spatial Audio with dynamic head tracking places sounds all around you to create a three-dimensional listening experience for music, TV shows, movies and more.'),
-(2, 'iPhone 14', '799.00', 68, 'A15 Bionic, with a 5‑core GPU, powers all the latest features and makes graphically intense games and AR apps feel ultra fluid.'),
-(3, 'Pixel 7', '599.99', 54, 'The fast and secure Pixel 7, with amazing battery life and advanced camera features.'),
-(4, 'Galaxy Book2', '699.00', 120, 'Galaxy Book2 offers a wide 15-inch display with plenty of productivity-boosting space. Neatly framed in a sleek full aluminium body, it delivers style and durability.'),
-(5, 'Chromebook', '299.00', 17, 'Chromebooks are designed to help you get things done quickly, securely and easily. Go from working hard to winding down with instant access to your files and favourite apps.'),
-(6, 'Galaxy Z Fold4', '1649.99', 23, 'It\'s basically two phones in one. Slimmed down everywhere but the screen, minimised bezels and lightweight materials make Galaxy Z Fold4 even more pocket-friendly.'),
-(7, 'Galaxy Book2 Pro 360', '1549.00', 25, 'Galaxy Book2 Pro 360 is the device you’ve been waiting for. Thin and light, this 2-in-1 laptop works perfectly with S Pen and with the enhanced low latency, you can write and draw smoothly like you would with a real pen.');
 
 --
 -- Indexes for dumped tables
@@ -140,7 +140,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
