@@ -34,9 +34,12 @@ To use this app you will require the following dependencies:
 1. Clone this repo: `git clone git@github.com:henryppercy/rework-laravel-task.git`.
 2. Navigate into the newly created repo: `cd rework-laravel-task`.
 3. Navigate to `/database/docs/rework-laravel-database.sql`. Run these queries in your MySql gui or terminal to recreate the database for this project.  
-4. From the root of the project run: `composer install`.
-5. To run the application locally run: `php artisan serve`.
-6. The project can then be accessed at port `8000/products` or whichever is specified in the terminal.
+4. From the root of the project run: `npm install`.
+5. From the root of the project run: `composer install`.
+6. From the root of the project run: `cp .env.example .env`.
+7. From the root of the project run: `php artisan key:generate`.
+8. To run the application locally run: `php artisan serve`.
+9. The project can then be accessed at port `8000/products` or whichever is specified in the terminal.
 
 ## 4. Next Steps
 
